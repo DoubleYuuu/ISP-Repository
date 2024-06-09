@@ -28,7 +28,7 @@ public class LevelManager {
     private void loadLevel(int level){
         // update levelSprite based on current level
         levelSprite = LoadSave.getSprite("level" + level + ".png");
-        if (levelsprite == null){
+        if (levelSprite == null){
             System.out.println(" Error: Level " + " could not be loaded.");
         }
     }
