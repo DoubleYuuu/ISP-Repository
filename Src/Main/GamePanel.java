@@ -6,9 +6,11 @@ import Inputs.KeyInputs;
 import Inputs.MouseInputs;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class GamePanel extends JPanel{
@@ -16,20 +18,28 @@ public class GamePanel extends JPanel{
     private MouseInputs mouseInputs;
     private float x = 100;
     private float y = 100;
-    private float xDir = 1f;
-    private float yDir = 1f;
-    private int frames = 0;
-    private long lastCheck = 0;
-    private Color color = new Color(150, 20, 90);
+    private BufferedImage img;
     
     public GamePanel(){
 
+        importImg();
+
+        setPanelSize();
         mouseInputs = new MouseInputs(this);
         addKeyListener(new KeyInputs(this));
         addMouseListener(mouseInputs);
         addMouseMotionListener(mouseInputs);
 
 
+    }
+
+    private void importImg(){
+        
+    }
+
+    private void setPanelSize(){
+        Dimension size = new Dimension(1280, 800);
+        setPreferredSize(size);
     }
 
     public void changeXSpeed(int value){
@@ -48,33 +58,8 @@ public class GamePanel extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
-        updateRectangle();
-        g.setColor(color);
-        
-        g.fillRect((int) x, (int) y, 200, 50);
+        g.drawImage(null, x, y, null);
 
-
-    }
-
-    private void updateRectangle(){
-        x += xDir;
-        if(x > 400 || x < 0){
-            xDir *= -1;
-            color = getRndColor();
-        }
-        y += yDir;
-        if(y > 400 || y < 0 ){
-            yDir *= -1;
-            color = getRndColor();
-        }
-    }
-
-    private Color getRndColor(){
-        int r = randomNum(0,255);
-        int g = randomNum(0, 255);
-        int b = randomNum(0, 255);
-
-        return new Color(r, g, b);
     }
 
     	/*-
