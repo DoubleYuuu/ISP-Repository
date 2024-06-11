@@ -10,8 +10,7 @@ import javax.imageio.ImageIO;
  * such as images form th efile system
  */
 public class LoadSave {
-    public static final String PLAYER = "player_sprites.png";
-    public static final String LEVEL_PLAYER = "level_sprites.png";
+    public static final String LEVEL_ATLAS = "level_atlas.png";
     
     /*
      * Loads a sprite form the specifies file name.
