@@ -1,6 +1,5 @@
 package util;
 
-
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +11,7 @@ import javax.imageio.ImageIO;
  */
 public class LoadSave {
     public static final String PLAYER = "player_sprites.png";
-    public static final String LVEL_PLAYER = "level_sprites.png";
+    public static final String LEVEL_PLAYER = "level_sprites.png";
     
     /*
      * Loads a sprite form the specifies file name.

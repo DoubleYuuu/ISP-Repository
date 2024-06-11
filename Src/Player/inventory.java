@@ -4,52 +4,58 @@ package Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 
 /*
  * The inventory class manages the player's collection of items and weapons.
  * It also includes methods to add, remove and list these itmes.
  */
 public class inventory {
-    // list to store items and weapons
-    private List<Item> items;
+    // Array to store weapon images
+    private BufferedImage[] weaponImages;
+    // List to store the weapon
     private List<Weapon> weapons; 
-    private int maxCapacity; 
+    // Image atlas containing teh weapon images
+    private BufferedImage atlas;; 
+
+
+    // Dimesnions for image atlas - could change
+    private static final int SCREEN_WIDTH = 250;
+    private static final int SCREEN_HEIGHT = 250;
 
     //Constructor
-    public void Inventory(int maxCapacity) {
-        this.items = new ArrayList<>();
-        this.weapons = new ArrayList<> ();
-        this.maxCapacity = maxCapacity;
+    public inventory(BufferedImage atlas) {
+        this.weaponImages = new BufferedImage[4]; // Assuming a max of 4 weapon images
+        this.weapons = new ArrayList<>();
+        this.atlas = atlas;
+        loadWeaponImages();
     }
 
     /*
-    * This method adds an item to the inventory
+    * This method loads the weapon images from the atlas
     */
-    public boolean addItem (Item item) {
-        if (items.size() < maxCapacity){
-            items.add(item);
-            return true;
-        }
-        return false;
+    private void loadWeaponImages () {
+        // dividing it into a 2x2 grid
+        int imgWidth = atlas.getWidth() / 2;
+        int imgHeight = atlas.getHeight() / 2;
 
-    }
-
-    /* 
-    * This method removes item from the inventory
-    */ 
-    public boolean removeItem(Item item){
-        return items.remove(item);
+        // load the images into the array
+        weaponImages[0] = atlas.getSubimage(0, 0, imgWidth, imgHeight);
+        weaponImages[1] = atlas.getSubimage(imgWidth, 0, imgWidth, imgHeight);
+        weaponImages[0] = atlas.getSubimage(0, imgHeight, imgWidth, imgHeight);
+        weaponImages[0] = atlas.getSubimage(imgWidth, imgHeight, imgWidth, imgHeight);
     }
 
     /* 
     * This method add weapons to the inventory
     */
-    public boolean addWeapon (Weapon weapon){
-        if (weapon.size() <maxCapacity){
+    public void addWeapon (Weapon weapon){
+        if (weapons.size() < 4){
             weapons.add(weapon);
-            return true;
+        } else {
+            System.out.println("Inventory is full.");
         }
-        return false;
     }
     
     /*
@@ -59,12 +65,33 @@ public class inventory {
         return weapon.remove(weapon);
     }
 
-    /*
-     * checks if the inventory contains a specific item, true if it does.
-     */
-    public boolean hasItem(Item item){
-        return items.contains(item);
-    }
+        /*
+         * Lists weapons in the inventory
+         */
+        public List<String> listweapons() {
+            List<String> weaponNames = new ArrayList<>();
+            for (Weapon weapon : weapons){
+                weaponNames.add(weapon.getName());
+            }
+            return weaponNames;
+        }
+
+        /**
+         * This method Draws the inventory on the screen
+         */
+        public void draw(Graphics g) {
+            // draw background
+            g.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+            // draw weapon images in inventory
+            int squareSize = 100;
+            int xOffset = 50;
+            int yOffset = 50;
+
+            for (int i = 0; i < weapons.size(); i ++){
+                g.drawImage(weaponImages[i], xOffset + (i * squareSize), yOffset, squareSize, squareSize, null);
+            }
+        }
 
     /*
      * Checks if the inventory contains a specific weapon
@@ -74,28 +101,12 @@ public class inventory {
     }
 
     /*
-     * This method  Lists items in the inventory
+     * get the total number of weapons in inventory
      */
-    public List<String> listItems(){
-        List<String> itemNames = new ArrayList<>();
-        for (Item item: items){
-            itemNames.add(item.getName());
-            
-        }
-        return itemNames;
-        }
-
-        /*
-         * Lists aa weapons in the inventory
-         */
-        public List<String> listweapons() {
-            List<String> weaponNames = new ArrayList<>();
-            for (Weapon weapon : weapons){
-                weaponNames.add(weapon.getName());
-            }
-            return weaponNames;
-        }
+    public int getweaponCount(){
+        return weapons.size();
     }
+    } // end class
 
 
 
