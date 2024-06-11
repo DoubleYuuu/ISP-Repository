@@ -6,14 +6,13 @@ public class GameWindow {
     
     private JFrame jframe;
 
-    public GameWindow(){
+    public GameWindow(GamePanel panel){
 
         jframe = new JFrame();
-
-        jframe.setSize(400, 400);
+        jframe.setSize(800, 800);
+        jframe.setLocationRelativeTo(null);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jframe.setVisible(true);
-        
+        jframe.add(panel); 
+        jframe.setVisible(true);        
     }
-
 }

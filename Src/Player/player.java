@@ -1,33 +1,37 @@
-package Player;
-
+package Player; 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import util.LoadSave;
 
-public class player {
+import util.LoadSave; 
+
+
+public class Player {
 
 
 
     private BufferedImage statusBarImg;
 
-    private int statusBarWidth = (int) (815 * Game.SCALE);
-    private int statusBarHeight = (int) (230 * Game.SCALE);
-    private int statusBarX = (int) (10 * Game.SCALE);
-    private int statusBarY = (int) (10 * Game.SCALE);
+    private int statusBarWidth = (int) (815/4);
+    private int statusBarHeight = (int) (230/4);
+    private int statusBarX = (int) (10);
+    private int statusBarY = (int) (10);
 
     private int maxHealth = 100;
     private int currentHealth = maxHealth;
 
-    private int healthBarWidth = (int) (553 * Game.SCALE);
-    private int healthBarHeight = (int) (67 * Game.SCALE);
-    private int healthBarXStart = (int) (10 * Game.SCALE);
-    private int healthBarYStart = (int) (10 * Game.SCALE);
+    private int healthBarWidth = (int) (140);
+    private int healthBarHeight = (int) (17);
+    private int healthBarXStart = (int) (57);
+    private int healthBarYStart = (int) (18);
 
     private int healthWidth = healthBarWidth;
 
+    public Player() { 
+        loadAnimations();
+    }
+    
     public void update(){
-
         updateHealthBar();
         updatePOS();
         updateAnimationTick();
@@ -39,13 +43,10 @@ public class player {
 
         healthWidth = (int)((currentHealth / (float)maxHealth) * healthBarWidth);
 
-
     }
 
     public void render(Graphics g) {
-
         drawUI(g);
-
     }
 
     private void drawUI(Graphics g) {
@@ -53,13 +54,12 @@ public class player {
         g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
         g.setColor(Color.red);
         g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
-
+        update();
     }
 
     public void changeHealth(int value) {
 
         currentHealth += value;
-
         if(currentHealth <= 0) {
             currentHealth = 0;
         } else if (currentHealth >= maxHealth) {
@@ -69,7 +69,7 @@ public class player {
 
     private void loadAnimations() {
 
-        statusBarImg = LoadSave.GetSpriteAtlas(LoadSave.STATUS_BAR);
+        statusBarImg = LoadSave.getSpriteAtlas(LoadSave.HEALTH_BAR);
 
     }
 
@@ -86,5 +86,4 @@ public class player {
     private void setAnimation() { //setting the anims
 
     }
-
 }

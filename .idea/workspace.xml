@@ -5,8 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a73d54b-f86e-4306-b5c7-1cb2bdf7c573" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Anubis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Boss.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Enemy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Entity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/GooeyHotLava.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/HomelessCaveGuy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Knight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/MotherNature.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Entity/Wizard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/GamePanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/GameWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/Playing.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Main/State.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Player/inventory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Player/player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/util/LoadSave.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Entity/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Player/player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Player/player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Weapons/Arrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Weapons/Arrows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Weapons/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Weapons/Bow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/res/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/res/bow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/res/health_bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/util/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/util/LoadSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Enemy/enemy.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Player/imadfile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Player/inventory.java" beforeDir="false" />
@@ -27,13 +59,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Devadath's-Branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717765586278</updated>
       <workItem from="1717765589482" duration="528000" />
+      <workItem from="1718055350144" duration="77000" />
     </task>
     <servers />
   </component>
