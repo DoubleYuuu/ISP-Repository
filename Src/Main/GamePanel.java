@@ -1,21 +1,15 @@
 package Main;
 
 
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
-
 import Inputs.KeyInputs;
 import Inputs.MouseInputs;
-
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Random;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
 public class GamePanel extends JPanel{
 
@@ -70,7 +64,7 @@ public class GamePanel extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
- //       g.drawImage(img, 0, 0, null);
+        g.drawImage(img.getSubimage(0, 0, 30, 30), (int)x, (int)y,60,60, null);
 
     }
 
