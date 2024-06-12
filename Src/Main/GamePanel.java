@@ -1,5 +1,7 @@
 package Main;
 
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import Inputs.KeyInputs;
@@ -11,6 +13,8 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
 
 public class GamePanel extends JPanel{
@@ -19,6 +23,8 @@ public class GamePanel extends JPanel{
     private float x = 100;
     private float y = 100;
     private BufferedImage img;
+
+    public static final String PLAYER_ATLAS = "player_sprites.png";  
     
     public GamePanel(){
 
@@ -34,7 +40,13 @@ public class GamePanel extends JPanel{
     }
 
     private void importImg(){
-        
+        InputStream is = GamePanel.class.getResourceAsStream("/" + PLAYER_ATLAS);
+
+        try{
+            img = ImageIO.read(is);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     private void setPanelSize(){
@@ -58,7 +70,7 @@ public class GamePanel extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 
-        g.drawImage(null, x, y, null);
+ //       g.drawImage(img, 0, 0, null);
 
     }
 
