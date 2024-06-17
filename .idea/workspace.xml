@@ -23,19 +23,6 @@
       <change afterPath="$PROJECT_DIR$/bin/Player/inventory.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/Player/player.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/util/LoadSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Entity/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Player/player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Player/player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Weapons/Arrows.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Weapons/Arrows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/Weapons/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Weapons/Bow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/res/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/res/bow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/res/health_bar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/util/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Src/util/LoadSave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.project" beforeDir="false" />
@@ -57,20 +44,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Devadath's-Branch",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Devadath's-Branch&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,6 +68,7 @@
       <updated>1717765586278</updated>
       <workItem from="1717765589482" duration="528000" />
       <workItem from="1718055350144" duration="77000" />
+      <workItem from="1718152402100" duration="55000" />
     </task>
     <servers />
   </component>
