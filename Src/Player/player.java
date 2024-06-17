@@ -11,7 +11,7 @@ public class Player {
 
 
     private BufferedImage statusBarImg;
-
+    public static int DEFAULT_MAX_HEALTH = 100; 
     private int statusBarWidth = (int) (815/4);
     private int statusBarHeight = (int) (230/4);
     private int statusBarX = (int) (10);
@@ -20,7 +20,7 @@ public class Player {
     private int maxHealth = 100;
     private int currentHealth = maxHealth;
 
-    private int healthBarWidth = (int) (140);
+    private int healthBarWidth = (int) (280);
     private int healthBarHeight = (int) (17);
     private int healthBarXStart = (int) (57);
     private int healthBarYStart = (int) (18);
@@ -40,22 +40,22 @@ public class Player {
     }
 
     private void updateHealthBar(){
-
+        System.out.println(currentHealth);
         healthWidth = (int)((currentHealth / (float)maxHealth) * healthBarWidth);
 
     }
 
     public void render(Graphics g) {
-        drawUI(g);
+        // drawUI(g);
     }
 
-    private void drawUI(Graphics g) {
+    // private void drawUI(Graphics g) {
 
-        g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
-        g.setColor(Color.red);
-        g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
-        update();
-    }
+    //     g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
+    //     g.setColor(Color.red);
+    //     g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, 100, 400);
+    //     update();
+    // }
 
     public void changeHealth(int value) {
 
@@ -85,5 +85,17 @@ public class Player {
 
     private void setAnimation() { //setting the anims
 
+    }
+
+    public void setMaxHealth(int health) { 
+        this.maxHealth = health; 
+    }
+
+    public int getMaxHealth() { 
+        return maxHealth; 
+    }
+
+    public void setCurrentHealth(int health) { 
+        this.currentHealth = health;
     }
 }

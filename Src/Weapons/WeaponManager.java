@@ -1,3 +1,5 @@
+package Weapons;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,8 @@
 package Player;
 
+import Entity.Enemy;
 
-    public class DifficultyManager {
+public class DifficultyManager {
     private static final double EASY_PLAYER_HEALTH_MULTIPLIER = 1.5;
     private static final double HARD_PLAYER_HEALTH_MULTIPLIER = 0.5;
 
@@ -45,4 +46,5 @@ package Player;
             player.setCurrentHealth(player.getMaxHealth()); // Reset health to full on difficulty change
         }
     }
+
 }

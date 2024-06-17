@@ -8,7 +8,7 @@ public class Game{
 
 
     public Game(){
-        gamePanel = new GamePanel(this); 
+        gamePanel = new GamePanel(); 
         new GameWindow(gamePanel);
         gamePanel.setFocusable(true);
         gamePanel.requestFocus();
