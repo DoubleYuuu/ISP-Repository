@@ -6,34 +6,36 @@ import java.util.List;
 
 import Entity.Entity;
 import Main.GamePanel;
+import Main.Playing;
 
 public class WeaponManager {
     private List<Arrow> arrows;
     private List<Slash> slashes;
     private List<StaffProjectile> staffProjectiles;
     private Entity entity;
+    private Playing playing; 
 
-    public WeaponManager(Entity entity) {
+    public WeaponManager(Entity entity, Playing playing) {
         this.entity = entity;
         arrows = new ArrayList<>();
         slashes = new ArrayList<>();
         staffProjectiles = new ArrayList<>();
+        this.playing = playing; 
     }
 
     public void addArrow() {
-        arrows.add(new Arrow(entity));
+        arrows.add(new Arrow(entity,playing));
     }
 
     public void addSlash() {
-        slashes.add(new Slash(entity));
+        slashes.add(new Slash(entity,playing));
     }
 
     public void addStaffProjectile() {
-        staffProjectiles.add(new StaffProjectile(entity));
+        staffProjectiles.add(new StaffProjectile(entity,playing));
     }
 
     public void drawAll(Graphics g) {
-        System.out.println("draw");
         for (Arrow arrow : arrows) {
             arrow.draw(g);
         }

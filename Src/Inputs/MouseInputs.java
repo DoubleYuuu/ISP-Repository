@@ -30,13 +30,12 @@ public class MouseInputs implements MouseMotionListener, MouseListener, ActionLi
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("ASd");
-        panel.getGame().getPlaying().mouseClicked(e);
 
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
+        panel.getGame().getPlaying().mouseClicked(e);
     }
 
     @Override

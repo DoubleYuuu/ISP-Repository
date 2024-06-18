@@ -1,6 +1,7 @@
 package Player; 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import util.LoadSave; 
@@ -9,11 +10,12 @@ import util.LoadSave;
 public class Player {
 
     private BufferedImage statusBarImg;
+    private BufferedImage playerImg; 
     public static int DEFAULT_MAX_HEALTH = 100; 
     private int statusBarWidth = (int) (815/4);
     private int statusBarHeight = (int) (230/4);
     private int statusBarX = (int) (10);
-    private int statusBarY = (int) (10);
+    private int statusBarY = (int) (50);
 
     private int maxHealth = 100;
     private int currentHealth = maxHealth;
@@ -24,6 +26,7 @@ public class Player {
     private int healthBarYStart = (int) (18);
 
     private int healthWidth = healthBarWidth;
+    private int playerX = 100; 
 
     public Player() { 
         loadAnimations();
@@ -38,19 +41,17 @@ public class Player {
     }
 
     private void updateHealthBar(){
-        System.out.println(currentHealth);
         healthWidth = (int)((currentHealth / (float)maxHealth) * healthBarWidth);
 
     }
 
     public void render(Graphics g) {
         drawUI(g);
-        System.out.println("hea");
     }
 
     private void drawUI(Graphics g) {
-
         g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
+        g.drawImage(playerImg, playerX, 500, null);
         g.setColor(Color.red);
         g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
         update();
@@ -69,6 +70,7 @@ public class Player {
     private void loadAnimations() {
 
         statusBarImg = LoadSave.GetSpriteAtlas(LoadSave.HEALTH_BAR);
+        playerImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYER);
 
     }
 
@@ -97,4 +99,22 @@ public class Player {
     public void setCurrentHealth(int health) { 
         this.currentHealth = health;
     }
+
+    public void keyPressed(KeyEvent e) { 
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_A:
+                playerX -= 3;
+                break;
+            case KeyEvent.VK_D:
+                playerX += 3;
+            break;
+
+        }
+    }
+
+    public int getPlayerX() { 
+        return playerX;
+    }
+    
+    
 }

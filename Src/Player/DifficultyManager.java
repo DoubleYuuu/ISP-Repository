@@ -5,6 +5,9 @@ import Entity.Enemy;
 public class DifficultyManager {
     private static final double EASY_PLAYER_HEALTH_MULTIPLIER = 1.5;
     private static final double HARD_PLAYER_HEALTH_MULTIPLIER = 0.5;
+    private int easyHealth = 200; 
+    private int normalHealth = 100; 
+    private int hardHealth = 50; 
 
     private boolean easy;
     private boolean hard;
@@ -35,16 +38,20 @@ public class DifficultyManager {
     }
 
     private void applyDifficultySettings() {
+        System.out.println("==================== DIFFICULTY CHANGED =======================");
+        System.out.print("Player Health " + player.getMaxHealth() + " -----> ");
         if (easy) {
-            player.setMaxHealth((int) (player.getMaxHealth() * EASY_PLAYER_HEALTH_MULTIPLIER));
+            player.setMaxHealth(easyHealth);
             player.setCurrentHealth(player.getMaxHealth()); // Reset health to full on difficulty change
         } else if (hard) {
-            player.setMaxHealth((int) (player.getMaxHealth() * HARD_PLAYER_HEALTH_MULTIPLIER));
+            player.setMaxHealth(hardHealth);
             player.setCurrentHealth(player.getMaxHealth()); // Reset health to full on difficulty change
         } else {
-            player.setMaxHealth(Player.DEFAULT_MAX_HEALTH); // Reset to default max health
+            player.setMaxHealth(normalHealth); // Reset to default max health
             player.setCurrentHealth(player.getMaxHealth()); // Reset health to full on difficulty change
         }
+        System.out.println(player.getMaxHealth());
+
     }
 
 }

@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 
 import Entity.Entity;
 import Main.GamePanel;
+import Main.Playing;
 import util.LoadSave;
 
 public class Arrow {
@@ -12,15 +13,18 @@ public class Arrow {
     int x = 100;
     int y = 100;
     private Entity entity;
+    private Playing playing; 
 
-    public Arrow(Entity entity) {
+    public Arrow(Entity entity, Playing playing) {
         arrowSprite = LoadSave.GetSpriteAtlas("arrow.png");
         this.entity = entity;
+        this.playing = playing;
     }
 
     public void draw(Graphics g) {
-        if (x < 600) {
-            g.drawImage(arrowSprite, x, y, null);
+        x = playing.getPlayer().getPlayerX(); 
+        if (x < playing.getPlayer().getPlayerX()+100) {
+            g.drawImage(arrowSprite, x, 500, null);
         } else {
             entity.hp -= 10;
         }

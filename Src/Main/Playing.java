@@ -3,7 +3,9 @@ package Main;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
+import Entity.Enemy;
 import Entity.Entity;
+import Player.DifficultyManager;
 import Player.Player;
 import Weapons.Slash;
 import Weapons.StaffProjectile;
@@ -17,11 +19,13 @@ public class Playing {
     private WeaponManager weaponManager; 
     private Entity entity; 
     private Game game; 
+    private DifficultyManager difficultyManager; 
 
     public Playing(Game game) { 
         this.player = new Player();
         this.entity = new Entity();
-        this.weaponManager = new WeaponManager(entity);
+        this.weaponManager = new WeaponManager(entity,this);
+        this.difficultyManager = new DifficultyManager(new Enemy(200), player);
         this.game = game;
     }
 
@@ -36,7 +40,18 @@ public class Playing {
     }
 
     public void mouseClicked(MouseEvent e) { 
+        if(e.getButton() == 1)
         weaponManager.addSlash();
+        else if(e.getButton() == 3)
+        weaponManager.addStaffProjectile();
+    }
+
+    public Player getPlayer() { 
+        return player;
+    }
+
+    public DifficultyManager getDifficultyManager() { 
+        return difficultyManager; 
     }
     
 }
