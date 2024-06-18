@@ -11,16 +11,15 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
     private BufferedImage staffProjectileSprite;
     int x = 100;
     int y = 100;
-    private GamePanel gamePanel;
     private Entity entity;
 
-    public StaffProjectile(GamePanel gamePanel, Entity entity) {
-        staffProjectileSprite = LoadSave.getSpriteAtlas("staff_projectile.png"); 
-        this.gamePanel = gamePanel;
+    public StaffProjectile(Entity entity) {
+        staffProjectileSprite = LoadSave.GetSpriteAtlas("staff_projectile.png"); 
         this.entity = entity;
     }
 
     public void draw(Graphics g) {
+        System.out.println(x);
         if (x < 600) {
             g.drawImage(staffProjectileSprite, x, y, null);
         } else {
@@ -29,7 +28,7 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
         update();
     }
 
-    private void update() {
+    public void update() {
         x++;
     }
 }

@@ -1,44 +1,33 @@
 package Main;
 
 import java.awt.Graphics;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 
+import Inputs.MouseInputs;
 import Player.Player;
 
 public class GamePanel extends JPanel {
-    private Player player;
-    // private Boss boss;
-    // private DifficultyManager difficultyManager;
+    private Game game; 
 
-    public GamePanel() {
-        player = new Player();
-        update();
-        // boss = new Boss();
-        // difficultyManager = new DifficultyManager(boss, player);
+    public GamePanel(Game game) {
+        this.game = game;
+        setFocusable(true);
+        addMouseListener(new MouseInputs(this));
     }
 
-    public void update() {
-        System.out.println("UPDATE");
-        player.update();
-        System.out.println("ASD");
-        // Update game components here
+      public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        try {
+            game.draw(g);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void draw(Graphics g) {
-        // player.render(g);
-        // Draw game components here
+    public Game getGame() {
+        return game; 
     }
 
-    // public void setEasyMode() {
-    //     difficultyManager.setEasyMode();
-    // }
-
-    // public void setHardMode() {
-    //     difficultyManager.setHardMode();
-    // }
-
-    // public void setNormalMode() {
-    //     difficultyManager.setNormalMode();
-    // }
 }

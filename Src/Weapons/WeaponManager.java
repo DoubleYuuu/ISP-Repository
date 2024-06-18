@@ -11,11 +11,9 @@ public class WeaponManager {
     private List<Arrow> arrows;
     private List<Slash> slashes;
     private List<StaffProjectile> staffProjectiles;
-    private GamePanel gamePanel;
     private Entity entity;
 
-    public WeaponManager(GamePanel gamePanel, Entity entity) {
-        this.gamePanel = gamePanel;
+    public WeaponManager(Entity entity) {
         this.entity = entity;
         arrows = new ArrayList<>();
         slashes = new ArrayList<>();
@@ -23,18 +21,19 @@ public class WeaponManager {
     }
 
     public void addArrow() {
-        arrows.add(new Arrow(gamePanel, entity));
+        arrows.add(new Arrow(entity));
     }
 
     public void addSlash() {
-        slashes.add(new Slash(gamePanel, entity));
+        slashes.add(new Slash(entity));
     }
 
     public void addStaffProjectile() {
-        staffProjectiles.add(new StaffProjectile(gamePanel, entity));
+        staffProjectiles.add(new StaffProjectile(entity));
     }
 
     public void drawAll(Graphics g) {
+        System.out.println("draw");
         for (Arrow arrow : arrows) {
             arrow.draw(g);
         }
@@ -43,6 +42,18 @@ public class WeaponManager {
         }
         for (StaffProjectile staffProjectile : staffProjectiles) {
             staffProjectile.draw(g);
+        }
+    }
+
+    public void updateAll() { 
+        for (Arrow arrow : arrows) {
+            arrow.update(); 
+        }
+        for (Slash slash : slashes) {
+            slash.update();
+        }
+        for (StaffProjectile staffProjectile : staffProjectiles) {
+            staffProjectile.update();
         }
     }
 }

@@ -8,8 +8,6 @@ import util.LoadSave;
 
 public class Player {
 
-
-
     private BufferedImage statusBarImg;
     public static int DEFAULT_MAX_HEALTH = 100; 
     private int statusBarWidth = (int) (815/4);
@@ -20,7 +18,7 @@ public class Player {
     private int maxHealth = 100;
     private int currentHealth = maxHealth;
 
-    private int healthBarWidth = (int) (280);
+    private int healthBarWidth = (int) (140);
     private int healthBarHeight = (int) (17);
     private int healthBarXStart = (int) (57);
     private int healthBarYStart = (int) (18);
@@ -46,16 +44,17 @@ public class Player {
     }
 
     public void render(Graphics g) {
-        // drawUI(g);
+        drawUI(g);
+        System.out.println("hea");
     }
 
-    // private void drawUI(Graphics g) {
+    private void drawUI(Graphics g) {
 
-    //     g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
-    //     g.setColor(Color.red);
-    //     g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, 100, 400);
-    //     update();
-    // }
+        g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
+        g.setColor(Color.red);
+        g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
+        update();
+    }
 
     public void changeHealth(int value) {
 
@@ -69,7 +68,7 @@ public class Player {
 
     private void loadAnimations() {
 
-        statusBarImg = LoadSave.getSpriteAtlas(LoadSave.HEALTH_BAR);
+        statusBarImg = LoadSave.GetSpriteAtlas(LoadSave.HEALTH_BAR);
 
     }
 

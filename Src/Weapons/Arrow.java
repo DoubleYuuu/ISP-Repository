@@ -11,12 +11,10 @@ public class Arrow {
     private BufferedImage arrowSprite;
     int x = 100;
     int y = 100;
-    private GamePanel gamePanel;
     private Entity entity;
 
-    public Arrow(GamePanel gamePanel, Entity entity) {
-        arrowSprite = LoadSave.getSpriteAtlas("arrow.png");
-        this.gamePanel = gamePanel;
+    public Arrow(Entity entity) {
+        arrowSprite = LoadSave.GetSpriteAtlas("arrow.png");
         this.entity = entity;
     }
 
@@ -26,10 +24,9 @@ public class Arrow {
         } else {
             entity.hp -= 10;
         }
-        update();
     }
 
-    private void update() {
+    public void update() {
         x++;
     }
 }

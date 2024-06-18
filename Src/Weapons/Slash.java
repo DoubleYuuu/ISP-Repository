@@ -11,12 +11,10 @@ public class Slash { //slashes from a sword
     private BufferedImage slashSprite;
     int x = 100;
     int y = 100;
-    private GamePanel gamePanel;
     private Entity entity;
 
-    public Slash(GamePanel gamePanel, Entity entity) {
-        slashSprite = LoadSave.getSpriteAtlas("slash.png"); 
-        this.gamePanel = gamePanel;
+    public Slash(Entity entity) {
+        slashSprite = LoadSave.GetSpriteAtlas("slash.png"); 
         this.entity = entity;
     }
 
@@ -26,10 +24,9 @@ public class Slash { //slashes from a sword
         } else {
             entity.hp -= 10;
         }
-        update();
     }
 
-    private void update() {
+    public void update() {
         x++;
     }
 }
