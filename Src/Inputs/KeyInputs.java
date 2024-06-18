@@ -17,7 +17,7 @@ public class KeyInputs implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         panel.getGame().getPlaying().getPlayer().keyPressed(e); 
-        System.out.println("ASD");
+        panel.getGame().getPlaying().keyPressed(e);
     }
 
     @Override

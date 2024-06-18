@@ -1,6 +1,7 @@
 package Main;
 
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 import Entity.Enemy;
@@ -46,6 +47,17 @@ public class Playing {
         weaponManager.addStaffProjectile();
     }
 
+
+    public void keyPressed(KeyEvent e) { 
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_F:
+            weaponManager.addArrow();
+            break;
+
+        }
+    }
+
+    
     public Player getPlayer() { 
         return player;
     }

@@ -32,7 +32,7 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
             e = true; 
         }
 
-        if (x < initialPos + 500) {
+        if (x < initialPos + 700) {
             g.drawImage(staffProjectileSprite, x, 500, -200, 200, null);
         } else {
             entity.hp -= 10;
