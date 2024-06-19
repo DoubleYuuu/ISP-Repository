@@ -1,15 +1,29 @@
 package Inputs;
 
+import Main.GamePanel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import Main.GamePanel;
 
 public class KeyInputs implements KeyListener {
 
     private GamePanel gamePanel;
 
-    public KeyInputs(GamePanel gamePanel){
+    public boolean wPressed = false;
+    public boolean aPressed = false;
+    public boolean sPressed = false;
+    public boolean dPressed = false;
+    public boolean shiftPressed = false;
+
+    public boolean leftFacing = false;
+    public boolean rightFacing = true;
+
+    public KeyInputs(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
+        wPressed = false;
+        aPressed = false;
+        sPressed = false;
+        System.out.println("I did this");
+        dPressed = false;
     }
 
     @Override
@@ -24,16 +38,23 @@ public class KeyInputs implements KeyListener {
 
         switch (e.getKeyCode()) {
             case (KeyEvent.VK_W):
-                gamePanel.changeYSpeed(-5);
+                wPressed = true;
                 break;
             case (KeyEvent.VK_A):
-                gamePanel.changeXSpeed(-5);
+                aPressed = true;
+                leftFacing = true;
+                rightFacing = false;
                 break;
             case (KeyEvent.VK_S):
-                gamePanel.changeYSpeed(5);
+                sPressed = true;
                 break;
             case (KeyEvent.VK_D):
-                gamePanel.changeXSpeed(5);
+                dPressed = true;
+                leftFacing = false;
+                rightFacing = true;
+                break;
+            case (KeyEvent.VK_SHIFT):
+                shiftPressed = true;
                 break;
         }
 
@@ -41,6 +62,24 @@ public class KeyInputs implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+        switch (e.getKeyCode()) {
+            case (KeyEvent.VK_W):
+                wPressed = false;
+                break;
+            case (KeyEvent.VK_A):
+                aPressed = false;
+                break;
+            case (KeyEvent.VK_S):
+                sPressed = false;
+                break;
+            case (KeyEvent.VK_D):
+                dPressed = false;
+                break;
+            case (KeyEvent.VK_SHIFT):
+                shiftPressed = false;
+                break;
+        }
 
     }
 
