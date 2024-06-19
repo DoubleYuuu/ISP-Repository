@@ -8,24 +8,11 @@ import Entity.Boss;
 import Main.Playing;
 import Player.Player;
 
-/** 
-************************************************************
-@Author : Kaarin Gaming / Ryder Hodgson
-@Ref : https://youtube.com/playlist?list=PL4rzdwizLaxYmltJQRjq18a9gsSyEQQ-0&si=t85p0gaCX1tJNt_r
-@Published : May 2022
-@Modifiers : Bobby, Nusayba, Ryder, Hamad
-@Modified : January 2024
-************************************************************
-*/
 
 public class Level {
 
 	private BufferedImage img;
 	public int[][] lvlData;
-
-
-	//private ArrayList<EntityType> entityname = new ArrayList<>();
-
 	private int lvlTilesWide;
 	private int maxTilesOffset;
 	private int maxLvlOffsetX;
