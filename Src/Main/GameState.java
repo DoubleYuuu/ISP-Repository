@@ -1,5 +1,4 @@
 package Main;
-// From KaarinGaming 
 
 public enum GameState {
     MENU, PLAYING;

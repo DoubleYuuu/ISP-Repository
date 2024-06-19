@@ -1,6 +1,5 @@
 package util;
 
-// import java.awt.color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
