@@ -17,6 +17,21 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
     private boolean e = false;
     private int initialPos = 0; 
 
+     /*
+     * Method Name: StaffProjectile
+     * @Author: Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 9, 2024
+     * @Description: Constructor for the StaffProjectile class. Initializes the projectile sprite,
+     *               entity, and playing instance variables. Sets the initial x position based on
+     *               the player's position.
+     * @Parameters: entity - the Entity instance representing the target entity.
+     *              playing - the Playing instance representing the current game state.
+     * @Returns: n/a
+     * Dependencies: LoadSave.GetSpriteAtlas
+     * Throws/Exceptions: n/a
+     */
+
     public StaffProjectile(Entity entity, Playing playing) {
         staffProjectileSprite = LoadSave.GetSpriteAtlas("staff_projectile.png"); 
         this.entity = entity;
@@ -24,6 +39,20 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
         x = playing.getPlayer().getPlayerX();
 
     }
+
+    /*
+     * Method Name: draw
+     * @Author: Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 9, 2024
+     * @Description: Draws the staff projectile on the screen and updates its position.
+     *               Also, checks if the projectile has traveled a certain distance
+     *               to reduce the entity's health.
+     * @Parameters: g - the Graphics instance used for drawing the staff projectile.
+     * @Returns: void
+     * Dependencies: playing.getPlayer().getPlayerX(), update()
+     * Throws/Exceptions: n/a
+     */
 
     public void draw(Graphics g) {
         if(!e) { 
@@ -39,6 +68,19 @@ public class StaffProjectile { // a magic ball like thing sent from staff/wand u
         }
         update();
     }
+
+    /*
+     * Method Name: update
+     * @Author: Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 9, 2024
+     * @Description: Updates the position of the staff projectile.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
 
     public void update() {
         x++;

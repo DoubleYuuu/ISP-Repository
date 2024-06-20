@@ -18,6 +18,18 @@ public class LoadSave {
 	public static final String DESERT = "desert.png"; 
 	public static final String LEVEL1 = "1.png"; 
 
+	 /*
+     * Method Name: GetSpriteAtlas
+     * @Author: Devadath Pillai, Parnia Yazdanparast
+     * @Date: June 9, 2024
+     * @Modified: June 9, 2024
+     * @Description: Loads a BufferedImage from the specified file name.
+     * @Parameters: fileName - the name of the image file to load.
+     * @Returns: BufferedImage - the loaded image.
+     * Dependencies: n/a
+     * Throws/Exceptions: IOException - if there's an error reading the image file.
+     */
+
     public static BufferedImage GetSpriteAtlas(String fileName) {
 		BufferedImage img = null;
 		InputStream is = LoadSave.class.getResourceAsStream("/" + fileName);

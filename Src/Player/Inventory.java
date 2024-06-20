@@ -20,9 +20,33 @@ public class Inventory {
     private BufferedImage bow, sword, staff; 
     int inventorySize = 20;
 
+    /*
+     * Method Name: Inventory
+     * @Author: Parnia Yazdanparast
+     * @Date: June 1, 2024
+     * @Modified: June 1, 2024
+     * @Description: Constructor for the Inventory class.
+     * @Parameters: n/a
+     * @Returns: n/a
+     * Dependencies: LoadSave class.
+     * Throws/Exceptions: n/a
+     */
+
     public Inventory() { 
         readImgs();
     }
+
+    /*
+     * Method Name: readImgs
+     * @Author: Parnia Yazdanparast
+     * @Date: June 11, 2024
+     * @Modified: June 11, 2024
+     * @Description: Loads images for items in the inventory.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: LoadSave class.
+     * Throws/Exceptions: n/a
+     */
 
     public void readImgs() { 
         staff = (LoadSave.GetSpriteAtlas(LoadSave.STAFF)); 
@@ -30,9 +54,33 @@ public class Inventory {
         bow =  (LoadSave.GetSpriteAtlas(LoadSave.BOW)); 
     }
 
+    /*
+     * Method Name: updateGraphics
+     * @Author: Parnia Yazdanparast
+     * @Date: June 11, 2024
+     * @Modified:  June 11, 2024
+     * @Description: Updates the graphics context for drawing.
+     * @Parameters: g - the Graphics object to update.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     public void updateGraphics(Graphics g) { 
         this.g = g; 
     }
+
+    /*
+     * Method Name: characterScreen
+     * @Author: Parnia Yazdanparast
+     * @Date: June 12, 2024
+     * @Modified: June 14, 2024
+     * @Description: Displays character information on screen.
+     * @Parameters: player - the Player instance to display information for.
+     * @Returns: void
+     * Dependencies: Player class.
+     * Throws/Exceptions: n/a
+     */
 
     public void characterScreen(Player player) { 
         int x = 25; 
@@ -78,6 +126,18 @@ public class Inventory {
 
     }
 
+    /*
+     * Method Name: drawInventory
+     * @Author: Parnia Yazdanparast
+     * @Date: June 13, 2024
+     * @Modified: June 15, 2024
+     * @Description: Draws the inventory UI on screen.
+     * @Parameters: player - the Player instance whose inventory is being displayed.
+     * @Returns: void
+     * Dependencies: Player class.
+     * Throws/Exceptions: n/a
+     */
+
     public void drawInventory(Player player) { 
         int x = 380; 
         int y = 220; 
@@ -112,6 +172,22 @@ public class Inventory {
 
     }
 
+    /*
+     * Method Name: drawSubWindow
+     * @Author: Parnia Yazdanparast
+     * @Date: June 16, 2024
+     * @Modified: June 16, 2024
+     * @Description: Draws a sub-window with rounded corners on screen.
+     * @Parameters: x - the x-coordinate of the window.
+     *              y - the y-coordinate of the window.
+     *              width - the width of the window.
+     *              height - the height of the window.
+     *              g2 - the Graphics object to draw on.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     public void drawSubWindow(int x, int y, int width, int height, Graphics g2) { 
         this.g = g2;
         Graphics2D g = (Graphics2D) g2; 
@@ -125,11 +201,36 @@ public class Inventory {
         g.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
     }
 
+     /*
+     * Method Name: getXforAlignToRightText
+     * @Author: Parnia Yazdanparast
+     * @Date: June 16, 2024
+     * @Modified: June 17, 2024
+     * @Description: Calculates the x-coordinate for aligning text to the right.
+     * @Parameters: text - the text to be aligned.
+     *              tailX - the x-coordinate of the right edge.
+     * @Returns: int - the x-coordinate for the aligned text.
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     public int getXforAlignToRightText(String text, int tailX) { 
         int length = (int)g.getFontMetrics().getStringBounds(text, g).getWidth(); 
         int x = tailX - length; 
         return x; 
     }
+
+    /*
+     * Method Name: keyPressed
+     * @Author: Parnia Yazdanparast
+     * @Date: June 16, 2024
+     * @Modified: June 16, 2024
+     * @Description: Handles key press events for inventory management.
+     * @Parameters: e - the KeyEvent instance representing the key press event.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
     
     public void keyPressed(KeyEvent e) { 
         

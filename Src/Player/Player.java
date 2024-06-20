@@ -31,10 +31,33 @@ public class Player {
     private int maxHealth = 100;
     private int currentHealth = maxHealth;
 
+    /*
+     * Method Name: Player
+     * @Author: Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: n/a
+     * @Description: Constructor for the Player class.
+     * @Parameters: n/a
+     * @Returns: n/a
+     * Dependencies: LoadSave class.
+     * Throws/Exceptions: n/a
+     */
 
     public Player() { 
         loadAnimations();
     }
+
+    /*
+     * Method Name: update
+     * @Author: Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: n/a
+     * @Description: Updates player state and animations.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
     
     public void update(){
         updateHealthBar();
@@ -44,14 +67,50 @@ public class Player {
 
     }
 
+    /*
+     * Method Name: updateHealthBar
+     * @Author: Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: n/a
+     * @Description: Updates the player's health bar based on current health.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     private void updateHealthBar(){
         healthWidth = (int)((currentHealth / (float)maxHealth) * healthBarWidth);
 
     }
 
+     /*
+     * Method Name: render
+     * @Author: Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: n/a
+     * @Description: Renders the player UI on screen.
+     * @Parameters: g - the Graphics object to render on.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     public void render(Graphics g) {
         drawUI(g);
     }
+
+    /*
+     * Method Name: drawUI
+     * @Author: Devadath Pillai
+     * @Date: June 7, 2024
+     * @Modified: n/a
+     * @Description: Draws the player's UI components on screen.
+     * @Parameters: g - the Graphics object to draw on.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     private void drawUI(Graphics g) {
         g.drawImage(statusBarImg, statusBarX, statusBarY, statusBarWidth, statusBarHeight, null);
@@ -60,6 +119,18 @@ public class Player {
         g.fillRect(healthBarXStart + statusBarX, healthBarYStart + statusBarY, healthWidth, healthBarHeight);
         update();
     }
+
+     /*
+     * Method Name: changeHealth
+     * @Author: Devadath Pillai
+     * @Date: June 7, 2024
+     * @Modified: June 7, 2024
+     * @Description: Changes the player's current health.
+     * @Parameters: value - the amount to change the health by (positive or negative).
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     public void changeHealth(int value) {
 
@@ -70,6 +141,18 @@ public class Player {
             currentHealth = maxHealth;
         }
     }
+
+    /*
+     * Method Name: loadAnimations
+     * @Author: Devadath Pillai
+     * @Date: June 7, 2024
+     * @Modified: June 8, 2024
+     * @Description: Loads animations and images for the player.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: LoadSave class.
+     * Throws/Exceptions: n/a
+     */
 
     private void loadAnimations() {
 
@@ -107,6 +190,18 @@ public class Player {
     public void setCurrentHealth(int health) { 
         this.currentHealth = health;
     }
+
+    /*
+     * Method Name: keyPressed
+     * @Author: Devadath Pillai
+     * @Date: June 8, 2024
+     * @Modified: June 9, 2024
+     * @Description: Handles key press events for player movement.
+     * @Parameters: e - the KeyEvent instance representing the key press event.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     public void keyPressed(KeyEvent e) { 
         switch (e.getKeyCode()) {

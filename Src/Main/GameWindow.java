@@ -6,6 +6,18 @@ public class GameWindow {
     
     private JFrame jframe;
 
+    /*
+     * Method Name: GameWindow
+     * @Author: Devadath Pillai
+     * @Date: June 8, 2024
+     * @Modified: June, 14, 2024
+     * @Description: Constructor for the GameWindow class. Initializes the JFrame and adds the game panel.
+     * @Parameters: panel - the GamePanel to add to the JFrame.
+     * @Returns: n/a
+     * Dependencies: JFrame, GamePanel classes.
+     * Throws/Exceptions: n/a
+     */
+
     public GameWindow(GamePanel panel){
 
         jframe = new JFrame();

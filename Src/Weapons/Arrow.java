@@ -17,11 +17,39 @@ public class Arrow {
     private boolean e = false; 
     private int initialPos = 0; 
 
+     /*
+     * Method Name: Arrow
+     * @Author: Devadath Pillai
+     * @Date: June 2, 2024
+     * @Modified: June 9, 2024
+     * @Description: Constructor for the Arrow class. Initializes the arrow sprite, 
+     *               entity, and playing instance variables.
+     * @Parameters: entity - the Entity instance representing the target entity.
+     *              playing - the Playing instance representing the current game state.
+     * @Returns: n/a
+     * Dependencies: LoadSave.GetSpriteAtlas
+     * Throws/Exceptions: n/a
+     */
+
     public Arrow(Entity entity, Playing playing) {
         arrowSprite = LoadSave.GetSpriteAtlas("arrow.png");
         this.entity = entity;
         this.playing = playing;
     }
+
+    /*
+     * Method Name: draw
+     * @Author: Devadath Pillai
+     * @Date: June 2, 2024
+     * @Modified: June 9, 2024
+     * @Description: Draws the arrow on the screen and updates its position.
+     *               Also, checks if the arrow has traveled a certain distance
+     *               to reduce the entity's health.
+     * @Parameters: g - the Graphics instance used for drawing the arrow.
+     * @Returns: void
+     * Dependencies: playing.getPlayer().getPlayerX(), update()
+     * Throws/Exceptions: n/a
+     */
 
     public void draw(Graphics g) {
         if(!e) { 
@@ -37,6 +65,18 @@ public class Arrow {
         }
         update();
     }
+
+    /*
+     * Method Name: update
+     * @Author: Devadath Pillai
+     * @Date: June 2, 2024
+     * @Modified: June 9, 2024
+     * @Description: Updates the position of the arrow.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     public void update() {
         x++;

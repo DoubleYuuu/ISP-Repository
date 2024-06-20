@@ -13,6 +13,8 @@ import Inputs.KeyInputs;
 import Inputs.MouseInputs;
 import Player.Player;
 
+
+
 public class GamePanel extends JPanel {
     private Game game; 
     public JButton damage = new JButton("Damage");
@@ -20,6 +22,18 @@ public class GamePanel extends JPanel {
     public JButton easy = new JButton("Difficult: Easy");
     public JButton normal = new JButton("Difficult: Normal");  
     public JButton hard = new JButton("Difficult: Hard"); 
+
+    /*
+     * Method Name: GamePanel
+     * @Author:  Devadath Pillai
+     * @Date: June 6, 2024
+     * @Modified: June 8, 2024
+     * @Description: Constructor for the GamePanel class. Sets up the panel, buttons, and input listeners.
+     * @Parameters: game - the Game instance associated with this panel.
+     * @Returns: n/a
+     * Dependencies: Game, MouseInputs, KeyInputs classes.
+     * Throws/Exceptions: n/a
+     */
 
     public GamePanel(Game game) {
         this.game = game;
@@ -64,6 +78,18 @@ public class GamePanel extends JPanel {
         addKeyListener(new KeyInputs(this));
     }
 
+    /*
+     * Method Name: paintComponent
+     * @Author:  Devadath Pillai
+     * @Date: June 6, 2024
+     * @Modified: June 6, 2024
+     * @Description: Overrides the paintComponent method to draw the game state.
+     * @Parameters: g - the Graphics context where the game will be drawn.
+     * @Returns: void
+     * Dependencies: Game class.
+     * Throws/Exceptions: n/a
+     */
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         try {
@@ -73,7 +99,17 @@ public class GamePanel extends JPanel {
         }
     }
 
-
+    /*
+     * Method Name: buttonClicked
+     * @Author: Devadath Pillai
+     * @Date: June 8, 2024
+     * @Modified: June 9, 2024
+     * @Description: Handles button click events and performs corresponding actions.
+     * @Parameters: e - the ActionEvent triggered by a button click.
+     * @Returns: void
+     * Dependencies: Game, Playing, DifficultyManager classes.
+     * Throws/Exceptions: n/a
+     */
 
     public void buttonClicked(ActionEvent e) { 
         if(e.getActionCommand() == "Damage") { 
@@ -93,6 +129,18 @@ public class GamePanel extends JPanel {
         }
         requestFocus(); 
     }
+
+    /*
+     * Method Name: getGame
+     * @Author:  Devadath Pillai
+     * @Date: June 8, 2024
+     * @Modified: June 8, 2024
+     * @Description: Returns the Game instance associated with this panel.
+     * @Parameters: n/a
+     * @Returns: Game - the Game instance.
+     * Dependencies: Game class.
+     * Throws/Exceptions: n/a
+     */
 
     public Game getGame() {
         return game; 

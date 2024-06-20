@@ -16,6 +16,17 @@ public class Game implements Runnable {
     public Playing playing;
     private GamePanel panel;
 
+    /*
+     * Method Name: Game
+     * @Author:  Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: June 3, 2024
+     * @Description: Constructor for the Game class. Initializes game components and starts the game.
+     * @Parameters: n/a
+     * @Returns: n/a
+     * Dependencies: GamePanel, GameWindow, Playing classes.
+     * Throws/Exceptions: n/a
+     */
 
     public Game() {
         initialize();
@@ -26,26 +37,83 @@ public class Game implements Runnable {
         startGame();
     }
 
+    /*
+     * Method Name: startGame
+     * @Author:  Devadath Pillai
+     * @Date: June 3, 2024
+     * @Modified: June 3, 2024
+     * @Description: Starts the game thread.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
+
     public void startGame() {
         gameThread = new Thread(this);
         gameThread.start();
     }
 
+    /*
+     * Method Name: update
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 4, 2024
+     * @Description: Updates the game state.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: Playing class.
+     * Throws/Exceptions: IOException - if an I/O error occurs.
+     */
 
     public void update() throws IOException {
         playing.update();
           
     }
 
+    /*
+     * Method Name: draw
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 4, 2024
+     * @Description: Draws the game state.
+     * @Parameters: g - the Graphics context where the game will be drawn.
+     * @Returns: void
+     * Dependencies: Playing class.
+     * Throws/Exceptions: IOException - if an I/O error occurs.
+     */
 
     public void draw(Graphics g) throws IOException {
         playing.draw(g);
     }
 
+    /*
+     * Method Name: initialize
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 4, 2024
+     * @Description: Initializes the game components.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: Playing class.
+     * Throws/Exceptions: n/a
+     */
 
     public void initialize() {
         playing = new Playing(this);
     }
+
+     /*
+     * Method Name: run
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 9, 2024
+     * @Description: Main game loop for updating and rendering the game at fixed intervals.
+     * @Parameters: n/a
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     @Override
     public void run() {
@@ -80,11 +148,34 @@ public class Game implements Runnable {
 
         }
     }
-    
+
+    /*
+     * Method Name: getPlaying
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 4, 2024
+     * @Description: Returns the Playing instance.
+     * @Parameters: n/a
+     * @Returns: Playing - the Playing instance.
+     * Dependencies: Playing class.
+     * Throws/Exceptions: n/a
+     */
     
     public Playing getPlaying() {
         return playing;
     }
+
+    /*
+     * Method Name: keyPressed
+     * @Author:  Devadath Pillai
+     * @Date: June 4, 2024
+     * @Modified: June 4, 2024
+     * @Description: Handles key press events.
+     * @Parameters: e - the KeyEvent triggered by the key press.
+     * @Returns: void
+     * Dependencies: n/a
+     * Throws/Exceptions: n/a
+     */
 
     public void keyPressed(KeyEvent e) { 
         
