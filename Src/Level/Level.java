@@ -34,7 +34,7 @@ public class Level {
      *              playing - the Playing instance associated with the level.
      * @Returns: n/a
      * Dependencies: n/a
-     * Throws/Exceptions: n/a
+     * Throws/Exceptions: (Some of the code was taken from elsewhere, This would count to the 30% of outside code that you are allowed to use.)
      */
 
 	public Level(BufferedImage img, Playing playing) {
